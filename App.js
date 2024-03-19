@@ -37,7 +37,6 @@ export default function App() {
             backgroundColor: "white",
             position: "absolute",
             bottom: 0,
-            marginHorizontal: 0,
             // Max Height...
             height: 60,
             borderTopLeftRadius: 20,
@@ -49,6 +48,7 @@ export default function App() {
               width: 10,
               height: 10,
             },
+            marginHorizontal: 0,
             paddingHorizontal: 20,
             paddingBottom: 5,
           },
@@ -67,7 +67,7 @@ export default function App() {
                 style={{
                   // centring Tab Button...
                   position: "absolute",
-                  top: 20,
+                  top: 15,
                 }}
               >
                 <Image
@@ -112,7 +112,7 @@ export default function App() {
                 style={{
                   // centring Tab Button...
                   position: "absolute",
-                  top: 20,
+                  top: 15,
                 }}
               >
                 <Image
@@ -141,7 +141,7 @@ export default function App() {
             // Onpress Update....
             tabPress: (e) => {
               Animated.spring(tabOffsetValue, {
-                toValue: 75,
+                toValue: getWidth(),
                 useNativeDriver: true,
               }).start();
             },
@@ -195,7 +195,7 @@ export default function App() {
                 style={{
                   // centring Tab Button...
                   position: "absolute",
-                  top: 20,
+                  top: 15,
                 }}
               >
                 <Image
@@ -216,7 +216,7 @@ export default function App() {
             // Onpress Update....
             tabPress: (e) => {
               Animated.spring(tabOffsetValue, {
-                toValue: 223,
+                toValue: getWidth() * 3,
                 useNativeDriver: true,
               }).start();
             },
@@ -232,7 +232,7 @@ export default function App() {
                 style={{
                   // centring Tab Button...
                   position: "absolute",
-                  top: 20,
+                  top: 15,
                 }}
               >
                 <Image
@@ -253,7 +253,7 @@ export default function App() {
             // Onpress Update....
             tabPress: (e) => {
               Animated.spring(tabOffsetValue, {
-                toValue: 296,
+                toValue: getWidth() * 4,
                 useNativeDriver: true,
               }).start();
             },
@@ -269,9 +269,9 @@ export default function App() {
           position: "absolute",
           bottom: 56,
           // Horizontal Padding = 20...
-          left: 40,
-          borderBottomLeftRadius: 20,
-          borderBottomRightRadius: 20,
+          left: 30,
+          borderBottomStartRadius: 10,
+          borderBottomEndRadius: 10,
           transform: [{ translateX: tabOffsetValue }],
         }}
       ></Animated.View>
@@ -281,6 +281,7 @@ export default function App() {
 
 function getWidth() {
   const width = Dimensions.get("window").width;
+
   // Total five Tabs...
   return width / 5;
 }
